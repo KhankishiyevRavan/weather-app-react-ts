@@ -135,7 +135,7 @@ const Weather: React.FC = () => {
       {weather && (
         <div>
           <img
-            src={`/images/${weather.weather[0].icon}.png`}
+            src={`/weather-app-react-ts/images/${weather.weather[0].icon}.png`}
             width="64"
             height="64"
             alt={weather.weather[0].description}
@@ -172,7 +172,7 @@ const Weather: React.FC = () => {
                   >
                     <p>Saat: {hour.time}</p>
                     <img
-                      src={`/images/${hour.icon}.png`}
+                      src={`/weather-app-react-ts/images/${hour.icon}.png`}
                       width="40"
                       height="40"
                       alt={hour.description}
