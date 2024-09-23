@@ -41,7 +41,6 @@ const Weather: React.FC = () => {
   const [isCelsius, setIsCelsius] = useState<boolean>(true); // Temperatur vahidi seçimi
   const [units, setUnits] = useState<string>("metric"); // Temperatur vahidinin metrik və ya imperiyal olması
   const API_KEY = "62553053bb84aba9f01ecf8c4fb26216";
-  const [hasSearched, setHasSearched] = useState<boolean>(false);
   const searchWeather = async () => {
     setLoading(true);
     setError(null);
