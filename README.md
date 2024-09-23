@@ -57,3 +57,30 @@ Bu layihəni GitHub Pages üzərindən host etmək üçün aşağıdakı adımla
 1. `package.json` faylında `homepage` dəyərini öz GitHub repo URL-nizlə əvəz edin:
    ```json
    "homepage": "https://istifadeci-adiniz.github.io/my-weather-app"
+   ```
+
+2. `gh-pages` paketini quraşdırın:
+   ```bash
+   npm install --save gh-pages
+   ```
+
+3. Aşağıdakı skriptləri `package.json` faylınıza əlavə edin:
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+4. Layihəni build edin:
+   ```bash
+   npm run build
+   ```
+
+5. Layihəni GitHub Pages-də yayımlamaq üçün deploy edin:
+   ```bash
+   npm run deploy
+   ```
+
+Layihəniz artıq GitHub Pages-də yayımlanacaq. Saytınızı bu ünvanda görə bilərsiniz: `https://istifadeci-adiniz.github.io/my-weather-app`.
+```
