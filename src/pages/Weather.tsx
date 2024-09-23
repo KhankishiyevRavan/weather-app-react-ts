@@ -153,7 +153,7 @@ const Weather: React.FC = () => {
 
       {Object.keys(forecastData).length > 0 && (
         <div>
-          <h2>5 Günlük Hava Proqnozu</h2>
+          <h2>5 Day Weather Forecast</h2>
           {Object.keys(forecastData).map((day: string, index: number) => (
             <div
               key={index}
@@ -170,15 +170,15 @@ const Weather: React.FC = () => {
                     key={i}
                     style={{ marginBottom: "10px", border: "1px solid black" }}
                   >
-                    <p>Saat: {hour.time}</p>
+                    <p>Time: {hour.time}</p>
                     <img
                       src={`/weather-app-react-ts/images/${hour.icon}.png`}
                       width="40"
                       height="40"
                       alt={hour.description}
                     />
-                    <p>Temperatur: {hour.temp}</p>
-                    <p>Təsvir: {capitalizeFirstLetter(hour.description)}</p>
+                    <p>Temperature: {hour.temp}</p>
+                    <p>Description: {capitalizeFirstLetter(hour.description)}</p>
                   </div>
                 ))}
               </div>
