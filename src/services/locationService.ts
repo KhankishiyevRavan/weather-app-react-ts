@@ -23,7 +23,6 @@ export const getLocation = (
 
           const data = await response.json();
           setWeather(data);
-          console.log(data);
           setCity(data.name);
           if (data) {
             const forecastResponse = await fetchForecastByCity(
@@ -31,7 +30,6 @@ export const getLocation = (
               data?.coord?.lon,
               API_KEY
             );
-            console.log(forecastResponse);
             const newData = groupForecastByDay(forecastResponse); // Qruplaşdırılmış proqnoz məlumatları
             setForecastData(newData); // Məlumatları state-ə yazırıq
           }

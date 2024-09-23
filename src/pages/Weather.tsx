@@ -48,7 +48,6 @@ const Weather: React.FC = () => {
     setForecastData({});
     try {
       const data = await fetchWeatherByCity(city, API_KEY, units);
-      console.log(data);
       setForecastData({});
       if (data) {
         const forecastResponse = await fetchForecastByCity(
@@ -57,7 +56,6 @@ const Weather: React.FC = () => {
           API_KEY,
           units
         );
-        console.log(forecastResponse);
         const newData = groupForecastByDay(forecastResponse);
         setForecastData(newData);
       }

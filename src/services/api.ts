@@ -47,8 +47,6 @@ export const fetchForecastByCity = async (
   units: string,
 ) => {
   try {
-    console.log(units);
-    
     const response = await fetch(
       `${url.forecast(lat, lon, units)}&appid=${API_KEY}`
     );
