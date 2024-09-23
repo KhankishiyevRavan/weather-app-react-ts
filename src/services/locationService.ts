@@ -6,6 +6,7 @@ export const getLocation = (
   groupForecastByDay: any,
   setForecastData: any,
   setCity: any,
+  units: string,
   API_KEY: string
 ) => {
   if (navigator.geolocation) {
@@ -24,14 +25,17 @@ export const getLocation = (
           const data = await response.json();
           setWeather(data);
           setCity(data.name);
+
           if (data) {
             const forecastResponse = await fetchForecastByCity(
               data?.coord?.lat,
               data?.coord?.lon,
-              API_KEY
+              API_KEY,
+              units
             );
-            const newData = groupForecastByDay(forecastResponse); // Qruplaşdırılmış proqnoz məlumatları
-            setForecastData(newData); // Məlumatları state-ə yazırıq
+
+            const newData = groupForecastByDay(forecastResponse);
+            setForecastData(newData);
           }
           setError(null);
         } catch (err) {

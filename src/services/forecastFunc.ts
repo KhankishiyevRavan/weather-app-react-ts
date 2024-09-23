@@ -16,6 +16,11 @@ export const groupForecastByDay = (forecastData: any) => {
       temp: entry.main.temp,
       description: entry.weather[0].description,
       icon: entry.weather[0].icon,
+      humidity: entry.main.humidity,
+      wind: {
+        speed: entry.wind.speed,
+        deg: entry.wind.deg,
+      },
     });
   });
 

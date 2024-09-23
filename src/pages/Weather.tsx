@@ -6,6 +6,7 @@ import { groupForecastByDay } from "../services/forecastFunc";
 interface WeatherData {
   main: {
     temp: number;
+    humidity: number;
   };
   weather: {
     description: string;
@@ -19,6 +20,10 @@ interface WeatherData {
     lat: number;
     lon: number;
   };
+  wind: {
+    deg: number;
+    speed: number;
+  };
 }
 
 interface HourlyData {
@@ -26,6 +31,11 @@ interface HourlyData {
   temp: number;
   description: string;
   icon: string;
+  humidity: number;
+  wind: {
+    speed: number;
+    deg: number;
+  };
 }
 
 interface ForecastData {
@@ -86,6 +96,7 @@ const Weather: React.FC = () => {
       groupForecastByDay,
       setForecastData,
       setCity,
+      units,
       API_KEY
     );
   }, []);
@@ -145,6 +156,18 @@ const Weather: React.FC = () => {
             Temperatur:{" "}
             {isCelsius ? `${weather.main.temp}°C` : `${weather.main.temp}°F`}
           </p>
+          <p>
+            Humidity:
+            {`${weather?.main.humidity}%`}
+          </p>
+          <p>
+            Wind:
+            {`${weather?.wind.speed} km/h`}
+          </p>
+          <p>
+            Deg:
+            {`${weather?.wind.deg}`}
+          </p>
           <p>Description: {weather.weather[0].description}</p>
         </div>
       )}
@@ -175,8 +198,25 @@ const Weather: React.FC = () => {
                       height="40"
                       alt={hour.description}
                     />
-                    <p>Temperature: {hour.temp}</p>
-                    <p>Description: {capitalizeFirstLetter(hour.description)}</p>
+                    <p>
+                      Temperatur:{" "}
+                      {isCelsius ? `${hour.temp}°C` : `${hour.temp}°F`}
+                    </p>
+                    <p>
+                      Humidity:
+                      {`${hour.humidity}%`}
+                    </p>
+                    <p>
+                      Wind:
+                      {`${hour?.wind.speed} km/h`}
+                    </p>
+                    <p>
+                      Deg:
+                      {`${hour?.wind.deg}`}
+                    </p>
+                    <p>
+                      Description: {capitalizeFirstLetter(hour.description)}
+                    </p>
                   </div>
                 ))}
               </div>
