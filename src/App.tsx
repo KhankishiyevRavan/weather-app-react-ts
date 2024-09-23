@@ -4,7 +4,7 @@ import Weather from "./pages/Weather";
 function App() {
   return (
     <div className="App">
-      <Router  basename="/my-weather-app">
+      <Router  basename="/weather-app-react-ts">
         <Routes>
           <Route path="/" element={<Weather />} />
         </Routes>
