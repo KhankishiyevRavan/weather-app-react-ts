@@ -1,0 +1,2 @@
+.forecast-container{grid-gap:10px;display:grid;gap:10px;grid-template-columns:repeat(8,1fr)}@media (max-width:1200px){.forecast-container{grid-template-columns:repeat(4,1fr)}}@media (max-width:768px){.forecast-container{grid-template-columns:repeat(2,1fr)}}@media (max-width:500px){.forecast-container{grid-template-columns:repeat(1,1fr)}}.forecast-item{border:1px solid #ddd;padding:10px;text-align:center}
+/*# sourceMappingURL=main.5fd057e5.css.map*/
